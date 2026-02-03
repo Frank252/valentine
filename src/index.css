@@ -22,20 +22,20 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
-/* Cursore normale: cuore rosa singolo (usa un'immagine PNG trasparente di cuore)
+/* Cursore normale: cuore rosa singolo (usa un'immagine PNG trasparente di cuore) */
 body, html, #root, .overflow-hidden {
   cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), auto !important;
 }
 
-Quando hover su bottoni o elementi cliccabili (più cuori o effetto hover)
+/* Quando hover su bottoni o elementi cliccabili (più cuori o effetto hover)  */
 button:hover,
 h1:hover,
 img:hover {
   cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), pointer !important;
-} */
+}
 
 
 /* Alternativa con emoji cuore multiplo (usa SVG data URL per cuori rossi) */
-body {
+/* body {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><text x='0' y='24' font-size='24'>💖💕❤️</text></svg>"), auto !important;
-}
+} */
