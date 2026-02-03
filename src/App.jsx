@@ -15,15 +15,14 @@ export default function Page() {
     const phrases = [
       "No",
       "Are you sure?",
-      "Really sure?",
+      "Oh didn't expect this, u really sure?",
       "Think again!",
       "Last chance!",
-      "Surely not?",
       "You might regret this!",
       "Give it another thought!",
       "Are you absolutely certain?",
       "This could be a mistake!",
-      "Have a heart!",
+      "Silly this is not the yes button",
       "Don't be so cold!",
       "Change of heart?",
       "Wouldn't you reconsider?",
@@ -43,7 +42,7 @@ export default function Page() {
         <>
           <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
           <div className="text-4xl md:text-6xl font-bold my-4">
-            Ok Yayyyyy!!!
+            Hehehehe NOICE!!!!
           </div>
         </>
       ) : (
@@ -61,7 +60,7 @@ export default function Page() {
             src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.webp"
           />
           <h1 className="text-4xl md:text-6xl my-4 text-center">
-            Will you be my Valentine?
+            Hey Sweetie....Will you be my Valentine?
           </h1>
           <div className="flex flex-wrap justify-center gap-2 items-center">
             <button
