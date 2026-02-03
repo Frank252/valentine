@@ -1,6 +1,7 @@
 import { useState } from "react";
 import lovesvg from "./assets/All You Need Is Love SVG Cut File.svg";
 import lovesvg2 from "./assets/Love In The Air SVG Cut File.svg";
+import { useEffect } from "react"
 
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
@@ -35,7 +36,32 @@ export default function Page() {
 
     return phrases[Math.min(noCount, phrases.length - 1)];
   };
+/* il coso per l'hover */
+  useEffect(() => {
+  const handleMouseMove = (e) => {
+    const heart = document.createElement('div');
+    heart.textContent = '❤️';
+    heart.style.position = 'absolute';
+    heart.style.left = e.pageX + 'px';
+    heart.style.top = e.pageY + 'px';
+    heart.style.fontSize = '20px';
+    heart.style.pointerEvents = 'none';
+    heart.style.transform = 'translate(-50%, -50%)';
+    document.body.appendChild(heart);
 
+    setTimeout(() => {
+      heart.style.transition = 'all 1s';
+      heart.style.opacity = '0';
+      heart.style.transform = 'translate(-50%, -150%) scale(1.5)';
+    }, 10);
+
+    setTimeout(() => heart.remove(), 1500);
+  };
+
+  window.addEventListener('mousemove', handleMouseMove);
+  return () => window.removeEventListener('mousemove', handleMouseMove);
+}, []);
+/* il coso per l'hover */
   return (
     <div className="overflow-hidden flex flex-col items-center justify-center pt-4 h-screen -mt-16 selection:bg-rose-600 selection:text-white text-zinc-900">
       {yesPressed ? (
