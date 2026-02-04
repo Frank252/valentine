@@ -20,15 +20,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Background unico: gradient rosa dolce + animazione */
+/* Background SOLO su body/html/#root – NON su .overflow-hidden! */
 body,
 html,
-#root,
-.overflow-hidden {
-  background: linear-gradient(135deg, #ff9a9e, #fecfef, #ff9a9e); /* Aggiunto #ff9a9e alla fine per loop smooth */
+#root {
+  background: linear-gradient(135deg, #ff9a9e, #fecfef, #ff9a9e);
   background-size: 200% 200%;
   animation: gradient-shift 15s ease infinite;
-  min-height: 100vh; /* Assicura che copra tutto */
+  min-height: 100vh;
 }
 
 @keyframes gradient-shift {
@@ -38,7 +37,7 @@ html,
 }
 
 /* Cursore cuori */
-body, html, #root, .overflow-hidden {
+body, html, #root {
   cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), auto !important;
 }
 
@@ -48,7 +47,7 @@ img:hover {
   cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), pointer !important;
 }
 
-/* Floating elements (cuori e orsetti) */
+/* Floating elements */
 .floating-elements {
   position: fixed;
   top: 0;
@@ -57,7 +56,7 @@ img:hover {
   height: 100%;
   overflow: hidden;
   pointer-events: none;
-  z-index: -1;
+  z-index: -1; /* Dietro il contenuto */
 }
 
 .heart, .bear {
