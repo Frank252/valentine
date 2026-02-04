@@ -34,8 +34,14 @@ img:hover {
   cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), pointer !important;
 }
 
+body, html, #root, .overflow-hidden {
+  background: linear-gradient(135deg, #ff9a9e, #fecfef); /* Gradient rosa dolce, cambia colori se vuoi */
+  background-size: 200% 200%; /* Per un effetto morbido */
+  animation: gradient-shift 15s ease infinite; /* Opzionale: fa muovere piano il gradient */
+}
 
-/* Alternativa con emoji cuore multiplo (usa SVG data URL per cuori rossi) */
-/* body {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><text x='0' y='24' font-size='24'>💖💕❤️</text></svg>"), auto !important;
-} */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
