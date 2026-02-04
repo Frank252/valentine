@@ -10,6 +10,41 @@ export default function Page() {
     setNoCount(noCount + 1);
   };
 
+  useEffect(() => {
+  const createFloatingElements = () => {
+    const container = document.querySelector('.floating-elements');
+    if (!container) return;
+
+    // Cuori
+    const hearts = ['❤️', '💖', '💝', '💗', '💓'];
+    hearts.forEach(heart => {
+      const div = document.createElement('div');
+      div.className = 'heart';
+      div.innerHTML = heart;
+      div.style.left = Math.random() * 100 + 'vw';
+      div.style.animationDelay = Math.random() * 5 + 's';
+      div.style.animationDuration = 10 + Math.random() * 20 + 's';
+      container.appendChild(div);
+    });
+
+    // Orsetti
+    const bears = ['🧸', '🐻'];
+    bears.forEach(bear => {
+      const div = document.createElement('div');
+      div.className = 'bear';
+      div.innerHTML = bear;
+      div.style.left = Math.random() * 100 + 'vw';
+      div.style.animationDelay = Math.random() * 5 + 's';
+      div.style.animationDuration = 10 + Math.random() * 20 + 's';
+      container.appendChild(div);
+    });
+  };
+
+  createFloatingElements();
+  // Crea nuovi ogni 5s per effetto continuo
+  const interval = setInterval(createFloatingElements, 5000);
+  return () => clearInterval(interval);
+}, []);
   const getNoButtonText = () => {
     const phrases = [
       "No",
